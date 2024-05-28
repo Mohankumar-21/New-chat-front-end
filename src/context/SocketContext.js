@@ -10,7 +10,7 @@ export const SocketProvider = ({ children, token }) => {
 
   useEffect(() => {
     if (token) {
-      const newSocket = io('http://localhost:8001', {
+      const newSocket = io('https://practice-backend-h0hg.onrender.com', {
         auth: {
           token: token
         }
