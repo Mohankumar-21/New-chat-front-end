@@ -1,0 +1,262 @@
+
+
+.message-nav {
+    position: sticky;
+    top: 0;
+    height: 70px;
+    background-color: rgba(249, 249, 249, 0.563);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+
+.name-content{
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-weight: 600;
+   position: relative;
+   top: 15px;
+}
+
+.message-container {
+    display: flex;
+    gap: 20px;
+    height: 70px;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+
+.para-content{
+ position: relative;
+ margin-top: 15px;
+ font-size: 14px;
+}
+
+.dot-align{
+    cursor: pointer;
+    position: relative;
+    right: 15px;
+}
+
+
+.avatar-align{
+    position: relative;
+    right: 15px;
+}
+
+.Message-Box {
+    height: calc(99vh - 130px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+}
+
+
+.Input-message-container
+{
+    height: 60px;
+    background-color: rgba(249, 249, 249, 0.563);
+     display: flex;
+     /* grid-template-columns: 70px 1fr 70px; */
+}
+
+
+.plus-icon-align{
+    border: none;
+    outline: none;
+    display: flex;
+    height: 55px;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.plus-btn-container{
+   
+    position: relative;
+   
+}
+
+
+.plus-icon-align:hover{
+  color: blue;
+}
+
+.video-image-icon-container{
+    position: absolute;
+    background-color: white;
+    bottom: 63px;
+    width: 180px;
+    left: 10px;
+}
+
+
+.icon-Box{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.icon-alignment{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+
+
+.icon-alignment p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+    top:8px;
+    cursor: pointer;
+}
+
+.image-icon{
+    color: rgb(201, 13, 51);
+}
+
+.video-icon{
+    color: rgb(29, 13, 201);
+}
+
+
+.icon-alignment:hover {
+    background-color: rgb(221, 222, 222);
+}
+
+.image-video-upload-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(111, 111, 111, 0.286);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+    bottom: 0;
+}
+
+.image-alignment{
+    width: 300px;
+    height: 300px;
+}
+
+
+.CloseTag-alignment{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+.CloseTag-alignment:hover{
+    color: red;
+}
+
+
+.align-content {
+    object-fit: scale-down;
+  }
+  
+
+  .Loading-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+  }
+
+
+  .input-message-box {
+    width: 100%;
+    border: none;
+    outline: none;
+    display: flex;
+    height: 48px;
+    align-items: center;
+    padding: 10px ;
+
+  }
+
+
+  .Send-message-container
+  {
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    gap: 2;
+  }
+
+
+  .send-icon-align{
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    color: rgba(34, 34, 240, 0.771);
+  }
+
+
+  .send-icon-align:hover{
+    color: blue;
+  }
+
+  .Display-Message-container
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5px 15px;
+  }
+
+
+  .Display-Message-content{
+    background-color: aliceblue;
+    width: fit-content;
+    max-width: 500px;
+  }
+
+  .text-message{
+    padding: 2px 18px;
+    position: relative;
+    top: 12px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: break-word;
+    line-clamp: 1;
+  }
+
+
+  .dateFormat {
+    font-size: 12px;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0.9;
+
+  }
+
+
+  .margin-align {
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.789);
+  }
+
+  .get-image-content {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+  }
+
+  @media screen and (max-width : 720px) {
+    .Display-Message-content
+    {
+        max-width: 280px;
+    }
+  }

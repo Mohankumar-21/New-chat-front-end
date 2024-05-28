@@ -1,0 +1,27 @@
+
+.UserCard-container
+{
+  text-decoration: none;
+  color: black;
+}
+
+.userdetail-content{
+    font-weight: 500;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    overflow-wrap: normal; 
+}
+
+
+.email-content{
+    font-size: 14px;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    overflow-wrap: normal; 
+}
+
+.UserCard-container:hover{
+    background-color: rgba(200, 200, 200, 0.615);
+}

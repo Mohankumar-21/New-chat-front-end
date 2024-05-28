@@ -1,0 +1,27 @@
+
+ .Home-container 
+{
+    display: grid;
+    grid-template-columns: 350px 1fr ;
+    height: 99vh;
+}
+
+
+
+@media screen and (max-width:760px) {
+.Home-container 
+{
+        display: flex;
+        flex-direction: column;
+}
+.hidden
+{
+     display: none;
+     height: 0px;
+     width: 0px;
+}
+.sidebar-container
+{
+    height: 100%;
+}
+}

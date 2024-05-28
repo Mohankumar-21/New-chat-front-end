@@ -1,0 +1,113 @@
+.Edituser-Container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(157, 157, 157, 0.688); 
+    opacity: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+.Edituser-content
+{
+    width: 100%;
+    max-width: 400px;
+    
+}
+
+
+.custom-font {
+    font-family : bold;
+    font-weight:bold;
+}
+
+
+.custom-ptag{
+    font-weight: 500;
+}
+
+.custom-input
+{
+    width: 100%;
+    border: 2px solid rgb(222, 222, 222);
+    outline: none;
+}
+
+.custom-input:focus {
+    border: 2px solid #1aa7e5; 
+    outline: #1aa7e5;
+}
+
+
+.custom-bold{
+    font-weight:500;
+  }
+
+
+.Edit-FormContainer
+{
+  display: flex;
+  flex-direction: column;
+  gap:1px;
+}
+
+
+.photo-btn{
+    border: none;
+    outline: none;
+    font-weight: 500;
+    background-color: #bfc0c15a;
+}
+
+.photo-btn:hover
+{
+    background-color: #bfc0c19d;
+}
+
+.arrange-photo-form
+{
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.cancel-btn
+{
+    outline: none;
+    border: none;
+    background-color: red;
+    color: white;
+    font-weight: 500;
+
+}
+
+
+.Save-btn
+{
+    outline: none;
+    border: none;
+    background-color: rgb(21, 157, 21);
+    color: white;
+    font-weight: 500;
+}
+
+.cancel-btn:hover 
+{
+    background-color: rgb(204, 7, 7);
+}
+
+
+
+.Save-btn:hover {
+    background-color: rgb(14, 105, 14);
+}
