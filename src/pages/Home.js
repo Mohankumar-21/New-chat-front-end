@@ -3,24 +3,31 @@ import { useDispatch } from 'react-redux';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { message } from 'antd';
 import axios from 'axios';
-import { logout, setOnlineUser, setUser,setsocketConnection } from '../redux/userSlice';
+import { logout, setOnlineUser, setUser } from '../redux/userSlice';
 import '../CSS/Home.css';
 import Sidebar from '../component/Sidebar';
 import logo from '../assests/logo4.png';
-import socket from './Socket';
+import { useSocket } from '../context/SocketContext';
 
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
+  const socket = useSocket();
 
   const fetchUserDetails = async () => {
     try {
       const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`;
-      const response = await axios.get(URL, { withCredentials: true });
-
+      const token = localStorage.getItem('token'); // Get the token from local storage
+      const response = await axios.get(URL, {
+        withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${token}` // Include the token in the Authorization header
+        }
+      });
+  
       dispatch(setUser(response.data.data));
-
+  
       if (response.data.data.logout) {
         dispatch(logout());
         navigate('/email');
@@ -29,8 +36,7 @@ const Home = () => {
       message.error('Fetching user data failed!!');
     }
   };
-
-  console.log('socket', socket)
+    
 
   useEffect(() => {
     fetchUserDetails();
@@ -38,18 +44,26 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    if (!socket.connected) {
-      socket.connect();
-    }
-    dispatch(setsocketConnection(socket))
-    socket.on('onlineusers', (data) => {
-      dispatch(setOnlineUser(data));
-    });
+    if (socket) {
+      socket.on('connect', () => {
+        console.log('Socket connected:', socket.id);
+      });
 
-    return () => {
-      socket.disconnect();
-    };
-  }, [dispatch]);
+      socket.on('onlineusers', (data) => {
+        dispatch(setOnlineUser(data));
+      });
+
+      socket.on('disconnect', () => {
+        console.log('Socket disconnected');
+      });
+
+      return () => {
+        socket.off('connect');
+        socket.off('onlineusers');
+        socket.off('disconnect');
+      };
+    }
+  }, [dispatch, socket]);
 
   const basePath = location.pathname === '/';
 
