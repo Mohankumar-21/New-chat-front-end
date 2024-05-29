@@ -51,6 +51,7 @@ const Home = () => {
 
   useEffect(() => {
     fetchUserDetails();
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
