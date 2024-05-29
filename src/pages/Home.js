@@ -18,29 +18,39 @@ const Home = () => {
   const fetchUserDetails = async () => {
     try {
       const URL = `${process.env.REACT_APP_BACKEND_URL}/api/user-details`;
-      const token = localStorage.getItem('token'); // Get the token from local storage
+      const token = localStorage.getItem('token'); 
+    
+      if (!token) {
+        message.error('No token found. Please log in.');
+        navigate('/email');
+        return;
+      }
+
       const response = await axios.get(URL, {
         withCredentials: true,
         headers: {
-          Authorization: `Bearer ${token}` // Include the token in the Authorization header
+          Authorization: `Bearer ${token}` 
         }
       });
+
   
-      dispatch(setUser(response.data.data));
-  
+
       if (response.data.data.logout) {
+        message.error('Session expired. Please log in again.');
         dispatch(logout());
         navigate('/email');
+      } else {
+        dispatch(setUser(response.data.data));
       }
     } catch (error) {
       message.error('Fetching user data failed!!');
+      console.error('Error fetching user details:', error);
+      navigate('/email');
     }
   };
-    
 
   useEffect(() => {
     fetchUserDetails();
-    // eslint-disable-next-line 
   }, []);
 
   useEffect(() => {
